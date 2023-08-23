@@ -9,6 +9,6 @@ class Calendarevent:
 
     def get_dict(self):
         return {
-                "properties": self.properties.get_dict(),
-                "parents": self.parents
-                }
+            "properties": self.properties.get_dict(),
+            "parents": self.parents,
+        }

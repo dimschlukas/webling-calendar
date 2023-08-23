@@ -1,4 +1,5 @@
 import click
+
 # from dotenv import set_key
 
 
@@ -13,8 +14,8 @@ def main():  # pragma: no cover
 
 
 @main.command()
-@click.option('--set')
-@click.option('api.key', prompt=True)
+@click.option("--set")
+@click.option("api.key", prompt=True)
 def config(api_key):  # pragma: no cover
-    click.echo(f'set API Key: {api_key}')
+    click.echo(f"set API Key: {api_key}")
     # set_key('./.env', 'WEBLING_API_KEY', api_key)

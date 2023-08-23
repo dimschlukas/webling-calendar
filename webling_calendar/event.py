@@ -14,21 +14,21 @@ class Event:
     is_all_day: bool = False
 
     def __post_init__(self):
-        if (self.end is None and self.duration is None):
+        if self.end is None and self.duration is None:
             raise Exception("Either end datetime or duration has to be set")
-        elif (self.end is not None and self.duration is None):
+        elif self.end is not None and self.duration is None:
             self.duration = timedelta(hours=2)
-        elif (self.end is None and self.duration is not None):
+        elif self.end is None and self.duration is not None:
             self.end = self.begin + self.duration
 
     def get_dict(self):
         dtf = "%Y-%m-%d %H:%M:%S"
         return {
-                    "title": self.title,
-                    "description": self.description,
-                    "place": self.place,
-                    "begin": self.begin.strftime(dtf),
-                    "end": self.end.strftime(dtf),
-                    "duration": int(self.duration.seconds / 60),
-                    "isAllDay": self.is_all_day,
-                }
+            "title": self.title,
+            "description": self.description,
+            "place": self.place,
+            "begin": self.begin.strftime(dtf),
+            "end": self.end.strftime(dtf),
+            "duration": int(self.duration.seconds / 60),
+            "isAllDay": self.is_all_day,
+        }
