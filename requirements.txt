@@ -1,4 +1,4 @@
 click
-request
+requests
 types-requests
 python-dotenv
